@@ -1,6 +1,8 @@
 export default 1;
 
-export const b = 2;
+const b = 2
+
+export {b};
 
 export const c = 3;
 

@@ -88,10 +88,31 @@ const types = require('@babel/types');
             nodes.push(expressionStatement);
           })
           nodes.push(declaration);
-          
           path.replaceWithMultiple(nodes);
         } else if (specifiers) {
-          // todo 第2种情况待处理
+          const nodes = [];
+          specifiers.forEach(s => {
+            let name = s.local.name;
+            const expressionStatement = types.expressionStatement(
+              types.callExpression(
+                types.memberExpression(
+                  types.identifier('__webpack_require__'),
+                  types.identifier('d')
+                ), 
+                [
+                  types.identifier('__webpack_exports__'), 
+                  types.stringLiteral(name), 
+                  types.functionExpression(
+                    null, [], types.blockStatement([
+                      types.returnStatement(types.identifier(name))
+                    ])
+                  )
+                ]
+              )
+            );
+            nodes.push(expressionStatement);
+            path.replaceWithMultiple(nodes);
+          });
         }
       },
       // import

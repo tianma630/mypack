@@ -90,7 +90,7 @@
     
 './src/a.js': 
 (function(module, __webpack_exports__, __webpack_require__) {
-    eval('__webpack_require__.r(__webpack_exports__);\n\n__webpack_exports__["default"] = 1;\n\n__webpack_require__.d(__webpack_exports__, "b", function () {\n  return b;\n});\n\nconst b = 2;\n\n__webpack_require__.d(__webpack_exports__, "c", function () {\n  return c;\n});\n\nconst c = 3;\n\n__webpack_require__.d(__webpack_exports__, "plus", function () {\n  return plus;\n});\n\nconst plus = function (a, b) {\n  return a + b;\n};');
+    eval('__webpack_require__.r(__webpack_exports__);\n\n__webpack_exports__["default"] = 1;\nconst b = 2;\n\n__webpack_require__.d(__webpack_exports__, "b", function () {\n  return b;\n});\n\n__webpack_require__.d(__webpack_exports__, "c", function () {\n  return c;\n});\n\nconst c = 3;\n\n__webpack_require__.d(__webpack_exports__, "plus", function () {\n  return plus;\n});\n\nconst plus = function (a, b) {\n  return a + b;\n};');
 }),
 './src/b.js': 
 (function(module, __webpack_exports__, __webpack_require__) {

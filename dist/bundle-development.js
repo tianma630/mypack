@@ -21,7 +21,6 @@
 /******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.l = true;
-
 /******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -95,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"b\", function() { return b; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"c\", function() { return c; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"plus\", function() { return plus; });\n/* harmony default export */ __webpack_exports__[\"default\"] = (1);\n\nconst b = 2;\n\nconst c = 3;\n\nconst plus = function(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./src/a.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"b\", function() { return b; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"c\", function() { return c; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"plus\", function() { return plus; });\n/* harmony default export */ __webpack_exports__[\"default\"] = (1);\n\nconst b = 2\n\n\n\nconst c = 3;\n\nconst plus = function(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./src/a.js?");
 
 /***/ }),
 
@@ -119,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a */ \"./src/a.js\");\n/* harmony import */ var _b__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./b */ \"./src/b.js\");\n\n\n\nlet ret = Object(_a__WEBPACK_IMPORTED_MODULE_0__[\"plus\"])(_a__WEBPACK_IMPORTED_MODULE_0__[\"default\"], _a__WEBPACK_IMPORTED_MODULE_0__[\"b\"]) + Object(_b__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_a__WEBPACK_IMPORTED_MODULE_0__[\"c\"]);\n\nconsole.log(ret);\n\n\n\n// (function(a, b) {\n//   let ret = a(1, 2) + b(2, 3);\n\n//   console.log(ret);\n// })(\n// {a: function(a, b) {\n//   return a + b;\n// }}, \n// function(a, b) {\n//   return a * b;\n// }\n// )\n\n\n//# sourceURL=webpack:///./src/entry.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _a_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a.js */ \"./src/a.js\");\n/* harmony import */ var _b_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./b.js */ \"./src/b.js\");\n\n\n\nlet ret = Object(_a_js__WEBPACK_IMPORTED_MODULE_0__[\"plus\"])(_a_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"], _a_js__WEBPACK_IMPORTED_MODULE_0__[\"b\"]) + Object(_b_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_a_js__WEBPACK_IMPORTED_MODULE_0__[\"c\"]);\n\nconsole.log(ret);\n\n\n//# sourceURL=webpack:///./src/entry.js?");
 
 /***/ })
 
