@@ -17,7 +17,7 @@ const types = require('@babel/types');
   }
 
   // 按文件解析代码
-  function _pack(filename) {
+  function _parseFile(filename) {
     const content = fs.readFileSync(path.resolve(__dirname, filename), 'utf-8');
 
     const ast = parser.parse(content, {
@@ -35,8 +35,8 @@ const types = require('@babel/types');
       )
     ));
 
-    const dependMap = {}; // 存储依赖
-    let index = 0; // import 计数
+    const dependMap = {}; // 缓存import依赖，供代码中使用
+    let index = 0; // import计数，用于生成唯一的依赖字段名
 
     traverse(ast, {
       // export default
@@ -147,7 +147,7 @@ const types = require('@babel/types');
 
         apath.replaceWith(variableDeclaration);
 
-        _pack(absPath);
+        _parseFile(absPath);
       },
       // a -> _a__WEBPACK_IMPORTED_MODULE_0__["a"]
       enter: path => {
@@ -165,14 +165,17 @@ const types = require('@babel/types');
       }
     });
 
+    // 转义换行符，将代码合并成一行
     const code = transformFromAst(ast, null, {}).code.replace(/(\n)/g, (r, $1) => {
       return '\\n';
     });
 
+    // 拼接翻译后的代码
     param += '\'' + filename + '\': \n(function(module, __webpack_exports__, __webpack_require__) {\n    eval(\'' + code + '\');\n}),\n';
   }
 
-  _pack(entry);
+  // 解析入口文件
+  _parseFile(entry);
 
   // 合并代码并写入新的文件
   renderWebpackTemplate(output, {entry, param});
@@ -182,7 +185,7 @@ const types = require('@babel/types');
 })(require('./mypack.config.js'));
 
 /**
- * 使用webpack的模块生成新的代码文件
+ * 使用webpack的通用模板生成合并后的代码文件
  * @param {string} output 出口文件
  *  @param {string} entry 入口文件
  *  @param {string} param 合并的代码  
