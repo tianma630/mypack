@@ -148,7 +148,7 @@ const types = require('@babel/types');
       return '\\n';
     });
 
-    param += '\'' + filename + '\': (function(module, __webpack_exports__, __webpack_require__) { eval(\'' + code + '\');}),';
+    param += '\'' + filename + '\': \n(function(module, __webpack_exports__, __webpack_require__) {\n    eval(\'' + code + '\');\n}),\n';
   }
 
   _pack(entry);
@@ -257,7 +257,7 @@ function renderWebpackTemplate(output, {entry, param}) {
     /************************************************************************/
     /******/ ({
     
-    ${param}
+${param}
     
     /******/ });
   `);

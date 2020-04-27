@@ -88,7 +88,19 @@
     /************************************************************************/
     /******/ ({
     
-    './src/a.js': (function(module, __webpack_exports__, __webpack_require__) { eval('__webpack_require__.r(__webpack_exports__);\n\n__webpack_exports__["default"] = 1;\n\n__webpack_require__.d(__webpack_exports__, "b", function () {\n  return b;\n});\n\nconst b = 2;\n\n__webpack_require__.d(__webpack_exports__, "c", function () {\n  return c;\n});\n\nconst c = 3;\n\n__webpack_require__.d(__webpack_exports__, "plus", function () {\n  return plus;\n});\n\nconst plus = function (a, b) {\n  return a + b;\n};');}),'./src/b.js': (function(module, __webpack_exports__, __webpack_require__) { eval('__webpack_require__.r(__webpack_exports__);\n\n__webpack_exports__["default"] = function (a) {\n  return a * a;\n};\n\n;');}),'./src/entry.js': (function(module, __webpack_exports__, __webpack_require__) { eval('__webpack_require__.r(__webpack_exports__);\n\nvar _a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./src/a.js");\n\nvar _b__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("./src/b.js");\n\nlet ret = _a__WEBPACK_IMPORTED_MODULE_0__["plus"](_a__WEBPACK_IMPORTED_MODULE_0__["default"], _a__WEBPACK_IMPORTED_MODULE_0__["b"]) + _b__WEBPACK_IMPORTED_MODULE_1__["default"](_a__WEBPACK_IMPORTED_MODULE_0__["c"]);\n\nconsole.log(ret);');}),
+'./src/a.js': 
+(function(module, __webpack_exports__, __webpack_require__) {
+    eval('__webpack_require__.r(__webpack_exports__);\n\n__webpack_exports__["default"] = 1;\n\n__webpack_require__.d(__webpack_exports__, "b", function () {\n  return b;\n});\n\nconst b = 2;\n\n__webpack_require__.d(__webpack_exports__, "c", function () {\n  return c;\n});\n\nconst c = 3;\n\n__webpack_require__.d(__webpack_exports__, "plus", function () {\n  return plus;\n});\n\nconst plus = function (a, b) {\n  return a + b;\n};');
+}),
+'./src/b.js': 
+(function(module, __webpack_exports__, __webpack_require__) {
+    eval('__webpack_require__.r(__webpack_exports__);\n\n__webpack_exports__["default"] = function (a) {\n  return a * a;\n};\n\n;');
+}),
+'./src/entry.js': 
+(function(module, __webpack_exports__, __webpack_require__) {
+    eval('__webpack_require__.r(__webpack_exports__);\n\nvar _a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./src/a.js");\n\nvar _b__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("./src/b.js");\n\nlet ret = _a__WEBPACK_IMPORTED_MODULE_0__["plus"](_a__WEBPACK_IMPORTED_MODULE_0__["default"], _a__WEBPACK_IMPORTED_MODULE_0__["b"]) + _b__WEBPACK_IMPORTED_MODULE_1__["default"](_a__WEBPACK_IMPORTED_MODULE_0__["c"]);\n\nconsole.log(ret);');
+}),
+
     
     /******/ });
   
