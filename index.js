@@ -144,7 +144,11 @@ const types = require('@babel/types');
       }
     });
 
-    param += '\'' + filename + '\': (function(module, __webpack_exports__, __webpack_require__) { ' + transformFromAst(ast, null, {}).code + '}),';
+    const code = transformFromAst(ast, null, {}).code.replace(/(\n)/g, (r, $1) => {
+      return '\\n';
+    });
+
+    param += '\'' + filename + '\': (function(module, __webpack_exports__, __webpack_require__) { eval(\'' + code + '\');}),';
   }
 
   _pack(entry);
